@@ -1,0 +1,3 @@
+[submodule "Frontend/my-sports-playlist"]
+	path = Frontend/my-sports-playlist
+	url = https://github.com/mustafa012588/My-Sports-Playlist
