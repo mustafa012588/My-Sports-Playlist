@@ -1,0 +1,25 @@
+<div class="container mt-4">
+  <h2>Browse Matches</h2>
+
+  <div class="mb-3">
+    <button class="btn btn-outline-primary me-2" (click)="setFilter('All')">All</button>
+    <button class="btn btn-outline-success me-2" (click)="setFilter('Live')">Live</button>
+    <button class="btn btn-outline-warning" (click)="setFilter('Replay')">Replay</button>
+  </div>
+
+  <div *ngFor="let match of filteredMatches()" class="card mb-3">
+    <div class="card-body">
+      <h5>{{ match.title }}</h5>
+      <p>{{ match.competition }} - {{ match.date }} - <span class="badge bg-info">{{ match.status }}</span></p>
+<button
+  class="btn"
+  [ngClass]="addedMatchIds.includes(match.id) ? 'btn-success' : 'btn-outline-primary'"
+  [disabled]="addedMatchIds.includes(match.id)"
+  (click)="addToPlaylist(match.id)">
+  {{ addedMatchIds.includes(match.id) ? 'Added' : 'Add to Playlist' }}
+</button>
+
+
+    </div>
+  </div>
+</div>
